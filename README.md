@@ -20,9 +20,10 @@ this plugin will remove useless info from bundle install like unchanged gems "Us
 
 ## To-do
 
-New features that can be interesting to add
+New features that can be interesting to add if more users want too
 - Set config file to give freedom to user select which show up
 - Remove or simplify "Complete" final mensage
+- Add progress-bar to bundle install gem?
 
 ## Contributing
 

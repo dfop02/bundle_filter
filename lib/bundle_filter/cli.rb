@@ -6,6 +6,7 @@ class Bundler::CLI
       remembered_flag_deprecation(option)
     end
 
+    # Try reload cli install to change the complete msg
     require_relative "install"
     Bundler.settings.temporary(no_install: false) do
       Install.new(options.dup).run
