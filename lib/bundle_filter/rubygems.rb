@@ -10,7 +10,7 @@ class Bundler::Source::Rubygems
 
     if installed?(spec) && !force
       # Hide message when gem already installed and not changed
-      print_using_message "Using #{version_message(spec, options[:previous_spec])}" unless BundleFilter::Configuration.pretty
+      print_using_message "Using #{version_message(spec, options[:previous_spec])}"
       return nil # no post-install message
     end
 
@@ -28,11 +28,11 @@ class Bundler::Source::Rubygems
     install_path = rubygems_dir
     bin_path     = Bundler.system_bindir
 
-    require_relative "../rubygems_gem_installer"
+    require_relative '../rubygems_gem_installer'
 
     installer = Bundler::RubyGemsGemInstaller.at(
       path,
-      :security_policy => Bundler.rubygems.security_policies[Bundler.settings["trust-policy"]],
+      :security_policy => Bundler.rubygems.security_policies[Bundler.settings['trust-policy']],
       :install_dir => install_path.to_s,
       :bin_dir => bin_path.to_s,
       :ignore_dependencies => true,
@@ -51,7 +51,7 @@ class Bundler::Source::Rubygems
         raise
       rescue Gem::Security::Exception => e
         raise SecurityError,
-         "The gem #{File.basename(path, ".gem")} can't be installed because " \
+         "The gem #{File.basename(path, '.gem')} can't be installed because " \
          "the security policy didn't allow it, with the message: #{e.message}"
       end
 
@@ -59,7 +59,7 @@ class Bundler::Source::Rubygems
     end
 
     message = "Installing #{version_message(spec, options[:previous_spec])}"
-    message += " with native extensions" if spec.extensions.any?
+    message += ' with native extensions' if spec.extensions.any?
     Bundler.ui.confirm message
 
     installed_spec = installer.install
