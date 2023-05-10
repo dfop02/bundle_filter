@@ -11,3 +11,6 @@ bundle_filter-*.gem
 
 # rspec failure tracking
 .rspec_status
+
+.ruby-version
+.ruby-gemset

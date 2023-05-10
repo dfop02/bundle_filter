@@ -1,11 +1,7 @@
+# require 'progressbar'
 require 'bundler'
-require 'bundle_filter/configuration'
-require 'bundle_filter/cli'
 require 'bundle_filter/source'
-require 'bundle_filter/rubygems'
-require 'bundle_filter/metadata'
-require 'bundle_filter/git'
-require 'bundle_filter/path'
+require 'bundle_filter/source_rubygems'
 
 module BundleFilter
   Bundler::Plugin.add_hook('before-install-all') do |dependencies|
