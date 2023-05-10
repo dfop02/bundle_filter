@@ -6,6 +6,9 @@ require:
   - rubocop-rake
   - rubocop-rspec
 
+Metrics/ClassLength:
+  Enabled: false
+
 Metrics/MethodLength:
   Enabled: false
 
@@ -25,6 +28,9 @@ Style/HashSyntax:
   Enabled: false
 
 Style/IfUnlessModifier:
+  Enabled: false
+
+Style/OptionalBooleanParameter:
   Enabled: false
 
 Layout/LineLength:
